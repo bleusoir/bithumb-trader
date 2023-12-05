@@ -1,7 +1,12 @@
 spring:
   cloud:
     loadbalancer:
+      cache:
+        enabled: false
       retry:
+        enabled: false
+    openfeign:
+      httpclient:
         enabled: false
   jackson:
     deserialization:
