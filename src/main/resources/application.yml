@@ -11,3 +11,5 @@ spring:
   jackson:
     deserialization:
       fail-on-unknown-properties: false
+  main:
+    banner-mode: off
