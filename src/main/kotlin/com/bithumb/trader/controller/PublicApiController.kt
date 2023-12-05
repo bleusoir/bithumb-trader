@@ -18,4 +18,7 @@ class PublicApiController(private val publicApiService: PublicApiService) {
     fun getKrwCurrencyByCoinCode(@PathVariable coinCode: String): Any {
         return publicApiService.getKrwCurrencyByCoinCode(coinCode)
     }
+
+    @GetMapping("/orderbooks")
+    fun getAllOrderbooks() = publicApiService.getAllOrderbooks()
 }

@@ -7,15 +7,18 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 
 @FeignClient(
-    name = "allCurrency",
-    url = "https://api.bithumb.com/public/ticker",
+    name = "publicApiForBithumb",
+    url = "https://api.bithumb.com/public",
     configuration = [FeignConfig::class]
 )
 interface PublicApiForBithumbClient {
 
-    @GetMapping("/ALL_KRW")
+    @GetMapping("/ticker/ALL_KRW")
     fun getAllCurrency(): AllTickerDto
 
-    @GetMapping("/{coinCode}_KRW")
+    @GetMapping("/ticker/{coinCode}_KRW")
     fun getKrwCurrencyByCoinCode(@PathVariable coinCode: String): Any
+
+    @GetMapping("/orderbook/ALL_KRW")
+    fun getAllOrderbooks(): Any
 }

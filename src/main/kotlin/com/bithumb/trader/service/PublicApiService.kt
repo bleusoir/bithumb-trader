@@ -38,4 +38,8 @@ class PublicApiService(
         log.warn { "CODE :: $coinCode, CURRENCY :: $currency" }
         return currency
     }
+
+    fun getAllOrderbooks(): Any {
+        return publicApiForBithumbClient.getAllOrderbooks()
+    }
 }
