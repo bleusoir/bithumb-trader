@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.RestController
 class PublicApiController(private val publicApiService: PublicApiService) {
 
     @GetMapping
-    fun getAllCurrency(): Map<String, TickerDto> {
-        return publicApiService.getAllCurrency()
-    }
+    fun getAllCurrency(): Map<String, TickerDto> = publicApiService.getAllCurrency()
 
     @GetMapping("/{coinCode}")
-    fun getKrwCurrencyByCoinCode(@PathVariable coinCode: String): Any {
-        return publicApiService.getKrwCurrencyByCoinCode(coinCode)
-    }
+    fun getKrwCurrencyByCoinCode(@PathVariable coinCode: String): Any =
+        publicApiService.getKrwCurrencyByCoinCode(coinCode)
 
-    @GetMapping("/orderbooks")
+    @GetMapping("/orderbooks", "/orderbooks/")
     fun getAllOrderbooks() = publicApiService.getAllOrderbooks()
+
+    @GetMapping("/orderbooks/{coinCode}")
+    fun getKrwOrderbookByCoinCode(@PathVariable coinCode: String) = publicApiService.getKrwOrderbookByCoinCode(coinCode)
 }

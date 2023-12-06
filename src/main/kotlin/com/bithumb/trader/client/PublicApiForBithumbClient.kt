@@ -21,4 +21,7 @@ interface PublicApiForBithumbClient {
 
     @GetMapping("/orderbook/ALL_KRW")
     fun getAllOrderbooks(): Any
+
+    @GetMapping("/orderbook/{coinCode}_KRW")
+    fun getKrwOrderbookByCoinCode(@PathVariable coinCode: String): Any
 }

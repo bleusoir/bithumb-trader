@@ -39,7 +39,8 @@ class PublicApiService(
         return currency
     }
 
-    fun getAllOrderbooks(): Any {
-        return publicApiForBithumbClient.getAllOrderbooks()
-    }
+    fun getAllOrderbooks(): Any = publicApiForBithumbClient.getAllOrderbooks()
+
+    fun getKrwOrderbookByCoinCode(coinCode: String): Any = publicApiForBithumbClient.getKrwOrderbookByCoinCode(coinCode)
+
 }
