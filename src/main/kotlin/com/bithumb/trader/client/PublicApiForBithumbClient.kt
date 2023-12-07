@@ -24,4 +24,7 @@ interface PublicApiForBithumbClient {
 
     @GetMapping("/orderbook/{coinCode}_KRW")
     fun getKrwOrderbookByCoinCode(@PathVariable coinCode: String): Any
+
+    @GetMapping("/transaction_history/{coinCode}_KRW")
+    fun getTransactionHistoryByCoinCode(@PathVariable coinCode: String): Any
 }

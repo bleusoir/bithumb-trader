@@ -43,4 +43,6 @@ class PublicApiService(
 
     fun getKrwOrderbookByCoinCode(coinCode: String): Any = publicApiForBithumbClient.getKrwOrderbookByCoinCode(coinCode)
 
+    fun getTransactionHistoryByCoinCode(coinCode: String): Any =
+        publicApiForBithumbClient.getTransactionHistoryByCoinCode(coinCode)
 }
