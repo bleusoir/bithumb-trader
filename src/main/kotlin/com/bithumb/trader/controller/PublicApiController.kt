@@ -20,9 +20,14 @@ class PublicApiController(private val publicApiService: PublicApiService) {
     fun getAllOrderbooks() = publicApiService.getAllOrderbooks()
 
     @GetMapping("/orderbooks/{coinCode}")
-    fun getKrwOrderbookByCoinCode(@PathVariable coinCode: String) = publicApiService.getKrwOrderbookByCoinCode(coinCode)
+    fun getKrwOrderbookByCoinCode(@PathVariable coinCode: String) =
+        publicApiService.getKrwOrderbookByCoinCode(coinCode)
 
     @GetMapping("/transaction/history/{coinCode}")
     fun getTransactionHistoryByCoinCode(@PathVariable coinCode: String) =
         publicApiService.getTransactionHistoryByCoinCode(coinCode)
+
+    @GetMapping("/assets/status/{coinCode}")
+    fun getAssetsStatusByCoinCode(@PathVariable coinCode: String) =
+        publicApiService.getAssetsStatusByCoinCode(coinCode)
 }

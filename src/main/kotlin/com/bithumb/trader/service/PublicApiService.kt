@@ -45,4 +45,6 @@ class PublicApiService(
 
     fun getTransactionHistoryByCoinCode(coinCode: String): Any =
         publicApiForBithumbClient.getTransactionHistoryByCoinCode(coinCode)
+
+    fun getAssetsStatusByCoinCode(coinCode: String): Any = publicApiForBithumbClient.getAssetsStatusByCoinCode(coinCode)
 }
