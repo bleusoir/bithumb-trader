@@ -30,4 +30,11 @@ interface PublicApiForBithumbClient {
 
     @GetMapping("/assetsstatus/{coinCode}")
     fun getAssetsStatusByCoinCode(@PathVariable coinCode: String): Any
+
+    @GetMapping("/candlestick/{coinCode}_KRW/{chartIntervals}")
+    fun getCandleStickByCoinCodeAndChartIntervals(
+        @PathVariable coinCode: String,
+        @PathVariable chartIntervals: String
+    ): Any
+
 }

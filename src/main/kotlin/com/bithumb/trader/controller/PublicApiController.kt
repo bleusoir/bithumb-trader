@@ -30,4 +30,10 @@ class PublicApiController(private val publicApiService: PublicApiService) {
     @GetMapping("/assets/status/{coinCode}")
     fun getAssetsStatusByCoinCode(@PathVariable coinCode: String) =
         publicApiService.getAssetsStatusByCoinCode(coinCode)
+
+    @GetMapping("/candlestick/{coinCode}/{chartIntervals}")
+    fun getCandleStickByCoinCodeAndChartIntervals(
+        @PathVariable coinCode: String,
+        @PathVariable chartIntervals: String
+    ) = publicApiService.getCandleStickByCoinCodeAndChartIntervals(coinCode, chartIntervals)
 }

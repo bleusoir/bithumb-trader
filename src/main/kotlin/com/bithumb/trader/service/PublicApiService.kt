@@ -47,4 +47,7 @@ class PublicApiService(
         publicApiForBithumbClient.getTransactionHistoryByCoinCode(coinCode)
 
     fun getAssetsStatusByCoinCode(coinCode: String): Any = publicApiForBithumbClient.getAssetsStatusByCoinCode(coinCode)
+
+    fun getCandleStickByCoinCodeAndChartIntervals(coinCode: String, chartIntervals: String): Any =
+        publicApiForBithumbClient.getCandleStickByCoinCodeAndChartIntervals(coinCode, chartIntervals)
 }
